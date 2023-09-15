@@ -10,7 +10,9 @@ services:
       - "5000:5000"
     volumes:
     # to make changes dynamically without reloading docker compose
-      - ./frontend:/srv/app
+      # - ./frontend:/srv/app
+      - ./frontend/src:/app/src
+      - ./frontend/index.html:/app/index.html
     depends_on:
       - api
 
