@@ -3,10 +3,12 @@ import UrlTable  from "./UrlTable";
 import './App.css';
 import { useEffect, useState } from "react";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 function App() {
   const [urlDetailRows, setUrlDetailRows] = useState([]);
   useEffect(()=>{
-      fetch("http://localhost:3000/admin/route/resolutions/analytics",
+      fetch(`http://${BASE_URL}/admin/route/resolutions/analytics`,
       {method:"GET"}).then(
           response=> response.json()).then(
           data=>{

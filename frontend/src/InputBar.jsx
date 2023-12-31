@@ -3,6 +3,8 @@ import TextField from "@mui/material/TextField";
 import {Typography} from "@mui/material";
 import { useState } from 'react';
 
+const BASE_URL = import.meta.env.VITE_BASE_URL
+
 function InputBar(props){
 
     const [url, setUrl] = useState("")
@@ -10,7 +12,7 @@ function InputBar(props){
 
     const handleRegisterUrl = () =>{
         {
-            fetch("http://localhost:3000/api/shorten",
+            fetch(`http://${BASE_URL}/api/shorten`,
                 {
                     method:"POST",
                     body: JSON.stringify({

@@ -1,12 +1,12 @@
 # Use a Node.js base image
-FROM node:20.3.0
+FROM node:20.2.0
 
 # Set the working directory inside the container [prevents unnecessary reloads]
 WORKDIR /app
 
-# Copy the package.json and package-lock.json files first
+# Copy the package.json files first
 # This is to take advantage of Docker layer caching
-COPY package.json package-lock.json ./
+COPY package.json ./
 
 # Install dependencies
 RUN npm install
