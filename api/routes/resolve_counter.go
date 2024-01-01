@@ -65,7 +65,8 @@ func GetUrlResolutionAnalytics(c *fiber.Ctx) error {
 		args := v.Args()
 		redisKey := args[1].(string)
 		createdAtTimeAsString := v.Val()
-		layout := "2006-01-02T15:04:05.99999999Z"
+		// 2024-01-01T20:01:05.251021+09:00
+		layout := "2006-01-02T15:04:05.99999999-07:00"
 
 		parsedTime, err := time.Parse(layout, createdAtTimeAsString)
 		if err != nil {

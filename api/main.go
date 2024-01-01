@@ -7,6 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/joho/godotenv"
+	"github.com/rohitchauraisa1997/url-shortener/database"
 	"github.com/rohitchauraisa1997/url-shortener/routes"
 )
 
@@ -22,6 +23,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	database.CreateClient(0)
 
 	app := fiber.New()
 	app.Use(logger.New())
