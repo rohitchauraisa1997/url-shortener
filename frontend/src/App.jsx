@@ -4,6 +4,9 @@ import './App.css';
 import { useEffect, useState } from "react";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL
+console.log("BASE_URL");
+console.log(BASE_URL);
+console.log("BASE_URL");
 
 function App() {
   const [urlDetailRows, setUrlDetailRows] = useState([]);
