@@ -148,7 +148,7 @@ func GetUrlResolutionAnalytics(c *fiber.Ctx) error {
 		if ok {
 			routeResolutionDetails.Hits = val3
 		}
-		shortenedUrlKey := "http://" + os.Getenv("DOMAIN") + "/" + key
+		shortenedUrlKey := "https://" + os.Getenv("DOMAIN") + "/" + key
 		resp[shortenedUrlKey] = routeResolutionDetails
 	}
 
