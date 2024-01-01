@@ -9,6 +9,10 @@ import (
 	"github.com/rohitchauraisa1997/url-shortener/database"
 )
 
+func IsAlive(c *fiber.Ctx) error {
+	return c.Status(fiber.StatusOK).JSON(fiber.Map{"url-shortener": "running"})
+}
+
 func ResolveURL(c *fiber.Ctx) error {
 	rdb := database.CreateClient(0)
 	defer rdb.Close()

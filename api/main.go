@@ -11,6 +11,7 @@ import (
 )
 
 func setupRoutes(app *fiber.App) {
+	app.Get("/", routes.IsAlive)
 	app.Get("/admin/route/resolutions/analytics", routes.GetUrlResolutionAnalytics)
 	app.Get("/:url", routes.ResolveURL)
 	app.Post("/api/shorten", routes.ShortenURL)
